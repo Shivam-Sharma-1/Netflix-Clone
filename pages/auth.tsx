@@ -6,6 +6,7 @@ import { signIn } from "next-auth/react"
 import { useRouter } from "next/router"
 import { FcGoogle } from "react-icons/fc"
 import { FaGithub } from "react-icons/fa"
+import { sign } from "crypto"
 
 function Auth() {
     const router = useRouter()
@@ -86,12 +87,16 @@ function Auth() {
                             {variant === 'login' ? 'Login' : 'Sign up'}
                         </button>
                         <div className="flex gap-4 items-center justify-center mt-8">
-                            <div className="cursor-pointer w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80 transition
-                            ">
+                            <div 
+                                className="cursor-pointer w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80 transition"
+                                onClick={() => signIn('google', { callbackUrl : '/' })}
+                                >
                                 <FcGoogle size={30}/>
                             </div>
-                            <div className="cursor-pointer w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80 transition
-                            ">
+                            <div 
+                                className="cursor-pointer w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80 transition"
+                                onClick={() => signIn('github', { callbackUrl: '/' })}
+                                >
                                 <FaGithub size={30}/>
                             </div>
                         </div>
