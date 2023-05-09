@@ -3,8 +3,10 @@ import axios from "axios"
 import Image from "next/image"
 import { useCallback, useState } from "react"
 import { signIn } from "next-auth/react"
+import { useRouter } from "next/router"
 
 function Auth() {
+    const router = useRouter()
     const [email, setEmail] = useState('')
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
@@ -14,19 +16,7 @@ function Auth() {
     const toggleVariant = useCallback(() => {
         setVariant(currentVariant => currentVariant === 'login' ? 'register' : 'login')
     }, [])
-
-    const register = useCallback(async () => {
-        try {
-            await axios.post('/api/register', {
-                name,
-                email,
-                password
-            })
-        } catch(error) {
-            console.log(error);
-        }
-    }, [email, name, password])
-
+    
     const login = useCallback(async () => {
         try {
             await signIn('credentials', {
@@ -35,12 +25,24 @@ function Auth() {
                 redirect: false,
                 callbackUrl: '/'
             })
-            console.log('logged in');
-            
+            router.push('/') 
         } catch(error) {
             console.log(error);
         }
-    }, [email, password])
+    }, [email, password, router])
+
+    const register = useCallback(async () => {
+        try {
+            await axios.post('/api/register', {
+                name,
+                email,
+                password
+            })
+            login()
+        } catch(error) {
+            console.log(error);
+        }
+    }, [email, name, password, login])
 
     return (
         <div className=" relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-cover bg-center bg-fixed ">
