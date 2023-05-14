@@ -16,7 +16,6 @@ function Navbar() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			// console.log(window.scrollY);
 			if (window.scrollY >= TOP_OFFSET) {
 				setShowBackground(true);
 			} else {
@@ -53,7 +52,11 @@ function Navbar() {
                     duration-500 
                     bg-zinc-900 
                     bg-opacity-90 
-                    ${showBackground ? "bg-zinc-900 bg-opacity-90" : ""}`}
+                    ${
+						showBackground
+							? "bg-zinc-900 bg-opacity-90"
+							: "bg-opacity-0"
+					}`}
 			>
 				<Image
 					className="lg:h-7"
