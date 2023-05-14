@@ -1,6 +1,7 @@
 import Billboard from "@/Components/Billboard";
 import Navbar from "@/Components/Navbar";
 import useCurrentUser from "@/hooks/useCurrentUser";
+import useMovieList from "@/hooks/useMovieList";
 import { NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
 
@@ -22,8 +23,6 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 export default function Home() {
-	const { data: user } = useCurrentUser();
-
 	return (
 		<>
 			<Navbar />
