@@ -2,13 +2,29 @@ import Input from "@/Components/Input";
 import axios from "axios";
 import Image from "next/image";
 import { useCallback, useState } from "react";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/router";
+import { getSession, signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { NextPageContext } from "next";
+
+export async function getServerSideProps(context: NextPageContext) {
+	const session = await getSession(context);
+
+	if (session) {
+		return {
+			redirect: {
+				destination: "/",
+				permanent: false,
+			},
+		};
+	}
+
+	return {
+		props: {},
+	};
+}
 
 function Auth() {
-	const router = useRouter();
 	const [email, setEmail] = useState("");
 	const [name, setName] = useState("");
 	const [password, setPassword] = useState("");
@@ -26,14 +42,12 @@ function Auth() {
 			await signIn("credentials", {
 				email,
 				password,
-				redirect: false,
-				callbackUrl: "/",
+				callbackUrl: "/profiles",
 			});
-			router.push("/");
 		} catch (error) {
 			console.log(error);
 		}
-	}, [email, password, router]);
+	}, [email, password]);
 
 	const register = useCallback(async () => {
 		try {
@@ -102,13 +116,21 @@ function Auth() {
 						<div className="flex gap-4 items-center justify-center mt-8">
 							<div
 								className="cursor-pointer w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80 transition"
-								onClick={() => signIn("google")}
+								onClick={() =>
+									signIn("google", {
+										callbackUrl: "/profiles",
+									})
+								}
 							>
 								<FcGoogle size={30} />
 							</div>
 							<div
 								className="cursor-pointer w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80 transition"
-								onClick={() => signIn("github")}
+								onClick={() =>
+									signIn("github", {
+										callbackUrl: "/profiles",
+									})
+								}
 							>
 								<FaGithub size={30} />
 							</div>
@@ -121,7 +143,9 @@ function Auth() {
 								className="text-white ml-1 hover:underline cursor-pointer"
 								onClick={toggleVariant}
 							>
-								Create an account
+								{variant === "login"
+									? "Create an account"
+									: "Login"}
 							</span>
 						</p>
 					</div>
