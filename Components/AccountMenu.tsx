@@ -25,7 +25,7 @@ const AccountMenu: FC<AccountMenuProps> = ({ visible }) => {
 						alt="Avatar"
 					/>
 					<p className="text-white text-sm group-hover/item:underline">
-						{/* {currentUser?.name} */}
+						{currentUser?.name}
 					</p>
 				</div>
 			</div>
