@@ -78,9 +78,9 @@ const MovieCard: FC<MovieCardProps> = ({ data }) => {
 								className="text-black w-4 lg:w-6"
 								size={30}
 							/>
-							<div>
-								<FavoriteButton movieId={data?.id} />
-							</div>
+						</div>
+						<div>
+							<FavoriteButton movieId={data?.id} />
 						</div>
 
 						<p className="text-green-400 font-semibold mt-4">
