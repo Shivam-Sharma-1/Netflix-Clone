@@ -11,4 +11,13 @@ function useFavorites() {
 			revalidateOnReconnect: false,
 		}
 	);
+
+	return {
+		data,
+		isLoading,
+		error,
+		mutate,
+	};
 }
+
+export default useFavorites;
