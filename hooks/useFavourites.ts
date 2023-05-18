@@ -1,7 +1,7 @@
 import fetcher from "@/lib/fetcher";
 import useSWR from "swr";
 
-function useFavorites() {
+function useFavourites() {
 	const { data, error, isLoading, mutate } = useSWR(
 		"/api/favourites",
 		fetcher,
@@ -20,4 +20,4 @@ function useFavorites() {
 	};
 }
 
-export default useFavorites;
+export default useFavourites;

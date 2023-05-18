@@ -2,7 +2,7 @@ import Billboard from "@/Components/Billboard";
 import MovieList from "@/Components/MovieList";
 import Navbar from "@/Components/Navbar";
 import useCurrentUser from "@/hooks/useCurrentUser";
-import useFavorites from "@/hooks/useFavorites";
+import useFavourites from "@/hooks/useFavourites";
 import useMovieList from "@/hooks/useMovieList";
 import { NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
@@ -26,7 +26,7 @@ export async function getServerSideProps(context: NextPageContext) {
 
 export default function Home() {
 	const { data: movies = [] } = useMovieList();
-	const { data: favourites = [] } = useFavorites();
+	const { data: favourites = [] } = useFavourites();
 
 	return (
 		<>
