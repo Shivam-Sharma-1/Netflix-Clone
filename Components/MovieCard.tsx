@@ -3,7 +3,7 @@ import { BsFillPlayFill } from "react-icons/bs";
 import FavouriteButton from "./FavouriteButton";
 import { useRouter } from "next/router";
 import useInfoModal from "@/hooks/useInfoModal";
-import { BiChevronDown } from "react-icons/bi";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 interface MovieCardProps {
 	data: Record<string, any>;
@@ -27,7 +27,6 @@ const MovieCard: FC<MovieCardProps> = ({ data }) => {
                     rounded-md
                     group-hover:opacity-90
                     sm:group-hover:opacity-0
-                    delay-300
                     w-full
                     h-[12vw]
                     "
@@ -38,11 +37,10 @@ const MovieCard: FC<MovieCardProps> = ({ data }) => {
                     absolute
                     top-0
                     transition
-                    duration-200
+                    duration-500
                     z-10
                     invisible
                     sm:visible
-                    delay-300
                     w-full
                     scale-0
                     group-hover:scale-110
@@ -78,38 +76,42 @@ const MovieCard: FC<MovieCardProps> = ({ data }) => {
                         rounded-b-md
                         "
 				>
-					<div className="flex flex-row items-center gap-3">
-						<div
-							className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-white rounded-full flex justify-center items-center transition hover:bg-neutral-300"
-							onClick={() => router.push(`/watch/${data?.id}`)}
-						>
-							<BsFillPlayFill
-								className="text-black w-4 lg:w-6"
-								size={30}
-							/>
-						</div>
-						<div>
-							<FavouriteButton movieId={data.id} />
+					<div className="flex gap-2 flex-col items-start mt-1">
+						<div className="flex gap-2">
 							<div
-								onClick={() => openModal(data?.id)}
-								className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 border-white border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300"
+								className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-white rounded-full flex justify-center items-center transition hover:bg-neutral-300"
+								onClick={() =>
+									router.push(`/watch/${data?.id}`)
+								}
 							>
-								<BiChevronDown
-									className="text-white group-hover/item:text-neutral-300 w-4 lg:w-6"
+								<BsFillPlayFill
+									className="text-black"
 									size={30}
 								/>
 							</div>
+							<div className="flex gap-2">
+								<FavouriteButton movieId={data.id} />
+								<div
+									onClick={() => openModal(data?.id)}
+									className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 flex justify-center items-center transition hover:border-neutral-300"
+								>
+									<AiOutlineInfoCircle
+										className="text-white group-hover/item:text-neutral-300 "
+										size={130}
+									/>
+								</div>
+							</div>
 						</div>
 
-						<p className="text-green-400 font-semibold mt-4">
+						<p className="text-green-400 font-semibold">
 							New <span className="text-white">2023</span>
 						</p>
-						<div className="flex flex-row mt-4 gap-2 items-center">
+						<div className="flex flex-row gap-2 items-center">
 							<p className="text-white text-[10px] lg:text-sm">
 								{data.duration}
 							</p>
 						</div>
-						<div className="flex flex-row items-center gap-2 mt-4 text-[8px] text-white lg:text-sm">
+						<div className="flex flex-row items-center gap-2 text-[8px] text-white lg:text-sm">
 							<p>{data.genre}</p>
 						</div>
 					</div>

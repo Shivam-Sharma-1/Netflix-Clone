@@ -86,17 +86,17 @@ function Navbar() {
 				</div>
 				<div className="flex flex-row ml-auto gap-7 items-center">
 					<div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-						<BsSearch className="w-6" />
+						<BsSearch className="w-6" size={18} />
 					</div>
 					<div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-						<BsBell className="w-6" />
+						<BsBell className="w-6" size={18} />
 					</div>
 
 					<div
 						className="flex flex-row items-center gap-2 cursor-pointer relative"
 						onClick={toggleAccountMenu}
 					>
-						<div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
+						<div className="w-8 h-8 lg:w-10 lg:h-10 rounded-md overflow-hidden">
 							<Image src={avatar} alt="Avatar" />
 						</div>
 						<BsChevronDown

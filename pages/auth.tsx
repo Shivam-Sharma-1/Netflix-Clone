@@ -74,7 +74,7 @@ function Auth() {
 					/>
 				</nav>
 				<div className="flex justify-center">
-					<div className=" bg-black bg-opacity-70 px-16 py-16 self-center mt-2 rounded-md lg:w-2/5 lg:max-w-md ">
+					<div className=" bg-black bg-opacity-70 px-16 py-16 self-center mt-2 rounded-md  lg:w-2/5 lg:max-w-md ">
 						<h2 className="text-white text-4xl mb-8 font-semibold">
 							{variant === "login" ? "Sign in" : "Register"}
 						</h2>
@@ -135,17 +135,15 @@ function Auth() {
 								<FaGithub size={30} />
 							</div>
 						</div>
-						<p className="text-neutral-500 mt-12">
+						<p className="text-neutral-500 mt-12 flex justify-center">
 							{variant === "login"
-								? "First time using Netflix?"
+								? "New to Netflix?"
 								: "Already have an account?"}
 							<span
 								className="text-white ml-1 hover:underline cursor-pointer"
 								onClick={toggleVariant}
 							>
-								{variant === "login"
-									? "Create an account"
-									: "Login"}
+								{variant === "login" ? "Sign up now" : "Login"}
 							</span>
 						</p>
 					</div>
