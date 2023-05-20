@@ -9,18 +9,19 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         await serverAuth(req, res)
 
         const { movieId } = req.query
+        if (!movieId) throw new Error('Invalid ID')
 
         if (typeof movieId !== 'string' || !movieId) {
             throw new Error('Invalid ID');
         }
 
-        const movie = await prismadb.movie.findUnique({
+        const movies = await prismadb.movie.findUnique({
             where: {
                 id: movieId
             }
         })
 
-        if (!movie) throw new Error('Invalid ID')
+        return res.status(200).json(movies)
 
     } catch (error) {
         console.log(error);
