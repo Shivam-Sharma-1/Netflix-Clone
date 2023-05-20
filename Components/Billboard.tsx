@@ -1,9 +1,16 @@
 import useBillBoard from "@/hooks/useBillboard";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import PlayButton from "./PlayButton";
+import { useCallback } from "react";
+import useInfoModal from "@/hooks/useInfoModal";
 
 function Billboard() {
 	const { data } = useBillBoard();
+	const { openModal } = useInfoModal();
+
+	const handleOpenmodal = useCallback(() => {
+		openModal(data?.id);
+	}, [openModal, data?.id]);
 
 	return (
 		<div className="relative h-[56.25vw]">
@@ -25,6 +32,7 @@ function Billboard() {
 				<div className="flex flex-row items-center mt-3 md:mt-4 gap-3">
 					<PlayButton movieId={data?.id} />
 					<button
+						onClick={handleOpenmodal}
 						className="
                             bg-white
                             text-white
