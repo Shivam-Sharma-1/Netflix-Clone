@@ -64,8 +64,8 @@ function Auth() {
 
 	return (
 		<div className=" relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-cover bg-center bg-fixed ">
-			<div className=" bg-black w-full h-full bg-opacity-50 ">
-				<nav className=" px-12 py-5 ">
+			<div className=" bg-black w-full h-full md:bg-opacity-50 opacity-100 ">
+				<nav className="px-6 md:px-12 py-5 ">
 					<Image
 						src="/images/logo.png"
 						alt="Website-Logo"
@@ -74,7 +74,7 @@ function Auth() {
 					/>
 				</nav>
 				<div className="flex justify-center">
-					<div className=" bg-black bg-opacity-70 px-16 py-16 self-center mt-2 rounded-md w-3/6 lg:w-2/5 lg:max-w-md ">
+					<div className=" bg-black bg-opacity-70 p-6 md:px-16 md:py-16 self-center mt-2 rounded-md w-full md:w-2/5 md:max-w-md ">
 						<h2 className="text-white text-4xl mb-8 font-semibold">
 							{variant === "login" ? "Sign in" : "Register"}
 						</h2>
@@ -113,7 +113,7 @@ function Auth() {
 						>
 							{variant === "login" ? "Login" : "Sign up"}
 						</button>
-						<div className="flex gap-4 items-center justify-center mt-8">
+						<div className="flex gap-4 items-center justify-center mt-8 flex-row">
 							<div
 								className="cursor-pointer w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80 transition"
 								onClick={() =>
