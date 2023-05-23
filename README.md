@@ -107,7 +107,7 @@ The project follows a standard folder structure commonly used in Next.js applica
 This website is deployed using using Vercel  
 Website url: [link](https://netflix-clone12345.vercel.app)
 
-## Contributing
+## Contributions
 
 Contributions are always welcome!  
 If you would like to contribute to this project, please fork the repository and create a pull request.
