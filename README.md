@@ -1,38 +1,137 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+
+# Netflix-Clone
+
+Netflix-Clone is a fully responsive web application that replicates the popular streaming platform Netflix. It is built using Next.js, Prisma, React, NextAuth.js, Tailwind CSS, MongoDB and TypeScript. This project aims to showcase the implementation of these technologies to create a feature-rich clone of Netflix.
+
+## Game objective
+
+In this game, the player's aim is to achieve a score of over 30 in order to win. The player starts with five lives, but each time they are hit by a monster, they lose one life. The game features three types of enemies, each worth a different amount of points: flying enemies are worth one point, ground enemies are worth two points, and climbing enemies are worth three points. However, if a monster manages to exit the left side of the screen, one point is deducted from the player's score.
+
+## Screenshots
+
+![App Screenshot1](/images/readme_assets/screenshot1.png)
+![App Screenshot2](/images/readme_assets/screenshot2.png)
+![App Screenshot3](/images/readme_assets/screenshot3.png)
+![App Screenshot4](/images/readme_assets/screenshot4.png)
+
+## Technologies used
+
+-   Next.js
+-   React
+-   Tailwind CSS
+-   TypeScript
+-   Prisma
+-   NextAuth.js
+
+## Packages used
+
+-   Axios
+-   Bcrypt
+-   Lodash
+-   React-icons
+-   Zustand
+
+## Database used
+
+-   MongoDB
+
+## Features
+
+-   User authentication and authorization powered by NextAuth.js
+-   Dynamic routing and server-side rendering with Next.js
+-   Database interaction and ORM using Prisma
+-   Responsive and modern UI design with Tailwind CSS
+-   Typed JavaScript with TypeScript
+-   Fully responsive on all devices
 
 ## Getting Started
 
-First, run the development server:
+To get started with Netflix-Clone, follow these steps:
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  git clone https://github.com/Shivam-Sharma-1/Netflix-Clone
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate to the project directory
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd netflix-clone
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Install the dependencies:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+  npm install
+  # or
+  yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Set up the environment variables:
+   Create a .env file in the root directory of the project and add the following variables:
 
-## Learn More
+```bash
+  DATABASE_URL=your_database_url
+  NEXTAUTH_SECRET=your_nextauth_secret
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. Run the database migrations:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npx prisma migrate dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+6. Start the development server:
 
-## Deploy on Vercel
+```bash
+  npm run dev
+  # or
+  yarn dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application should now be running on `http://localhost:3000`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Folder Structure
+
+The project follows a standard folder structure commonly used in Next.js applications:
+
+-   `/pages`: Contains the Next.js page components.
+-   `/public`: Stores static assets such as images and fonts.
+-   `/styles`: Holds global styles and Tailwind CSS configuration.
+-   `/components`: Houses reusable UI components.
+-   `/lib`: Contains utility functions and API integration.
+-   `/prisma`: Includes Prisma configuration and database schema.
+-   `/types`: Holds TypeScript type definitions.
+    Feel free to explore and modify these folders as per your project requirements.
+
+## Website hosted URL
+
+This website is deployed using using Vercel  
+Website url: https://netflix-clone12345.vercel.app
+
+## Contributing
+
+Contributions are always welcome!  
+If you would like to contribute to this project, please fork the repository and create a pull request.
+
+## Authors
+
+-   [@Shivam-Sharma-1](https://github.com/Shivam-Sharma-1)
+
+## Acknowledgements
+
+-   [Full Stack Netflix Clone in React, Tailwind CSS, Next.JS, Prisma, MongoDB, NextAuth & Vercel](https://youtu.be/mqUN4N2q4qY)
+
+## Read more
+
+This project was created using various open-source libraries and frameworks.
+
+-   [Next.js docs](https://nextjs.org/docs)
+-   [React docs](https://react.dev/blog/2023/03/16/introducing-react-dev)
+-   [TailwindCSS docs](https://v2.tailwindcss.com/docs)
+-   [Typescript docs](https://www.typescriptlang.org/docs/)
+-   [Prisma docs](https://www.prisma.io/docs)
+-   [NextAuth.js docs](https://next-auth.js.org/getting-started/introduction)
+-   [Vercel docs](https://vercel.com/docs)
