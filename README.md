@@ -105,7 +105,7 @@ The project follows a standard folder structure commonly used in Next.js applica
 ## Website hosted URL
 
 This website is deployed using using Vercel  
-Website url: https://netflix-clone12345.vercel.app
+Website url: [link](https://netflix-clone12345.vercel.app)
 
 ## Contributing
 
