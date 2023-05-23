@@ -1,19 +1,15 @@
-
-
 # Netflix-Clone
 
 Netflix-Clone is a fully responsive web application that replicates the popular streaming platform Netflix. It is built using Next.js, Prisma, React, NextAuth.js, Tailwind CSS, MongoDB and TypeScript. This project aims to showcase the implementation of these technologies to create a feature-rich clone of Netflix.
 
-## Game objective
-
-In this game, the player's aim is to achieve a score of over 30 in order to win. The player starts with five lives, but each time they are hit by a monster, they lose one life. The game features three types of enemies, each worth a different amount of points: flying enemies are worth one point, ground enemies are worth two points, and climbing enemies are worth three points. However, if a monster manages to exit the left side of the screen, one point is deducted from the player's score.
-
 ## Screenshots
 
-![App Screenshot1](/images/readme_assets/screenshot1.png)
-![App Screenshot2](/images/readme_assets/screenshot2.png)
-![App Screenshot3](/images/readme_assets/screenshot3.png)
-![App Screenshot4](/images/readme_assets/screenshot4.png)
+![App Screenshot1](/public/readme_assets/screenshot1.png)
+![App Screenshot2](/public/readme_assets/screenshot2.png)
+![App Screenshot3](/public/readme_assets/screenshot3.png)
+![App Screenshot4](/public/readme_assets/screenshot4.png)
+![App Screenshot4](/public/readme_assets/screenshot5.png)
+![App Screenshot4](/public/readme_assets/screenshot6.png)
 
 ## Technologies used
 
