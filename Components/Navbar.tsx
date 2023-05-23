@@ -73,7 +73,7 @@ function Navbar() {
 					<NavbarItem label="Browse by languages" />
 				</div>
 				<div
-					className="flex flex-row gap-2 items-center ml-8 cursor-pointer relative lg:hidden"
+					className="flex flex-row gap-2 items-center ml-2 md:ml-8 cursor-pointer relative lg:hidden"
 					onClick={toggleMobileMenu}
 				>
 					<p className="text-white text-sm">Browse</p>
