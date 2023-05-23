@@ -74,7 +74,7 @@ function Auth() {
 					/>
 				</nav>
 				<div className="flex justify-center">
-					<div className=" bg-black bg-opacity-70 px-16 py-16 self-center mt-2 rounded-md  lg:w-2/5 lg:max-w-md ">
+					<div className=" bg-black bg-opacity-70 px-16 py-16 self-center mt-2 rounded-md w-3/6 lg:w-2/5 lg:max-w-md ">
 						<h2 className="text-white text-4xl mb-8 font-semibold">
 							{variant === "login" ? "Sign in" : "Register"}
 						</h2>
